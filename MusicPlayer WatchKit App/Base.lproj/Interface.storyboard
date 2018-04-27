@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="12121" systemVersion="16G1114" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
+    <device id="watch42" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="watchOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="12029"/>
+    </dependencies>
+    <scenes>
+        <!--Interface Controller-->
+        <scene sceneID="aou-V4-d1y">
+            <objects>
+                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="MusicPlayer_WatchKit_App" customModuleProvider="target">
+                    <items>
+                        <group width="1" alignment="left" layout="vertical" id="ucQ-OT-Vkn">
+                            <items>
+                                <group width="1" alignment="left" layout="vertical" id="VJ4-K2-az9">
+                                    <items>
+                                        <label alignment="center" text="Artist" id="mLr-Sj-SaM"/>
+                                        <label alignment="center" text="Song" id="Ldy-4o-nEK"/>
+                                    </items>
+                                </group>
+                                <group width="1" alignment="left" id="QxU-xy-vSZ">
+                                    <items>
+                                        <button height="40" alignment="center" backgroundImage="Rewind" id="nfS-h3-PqL">
+                                            <variation key="device=watch38mm" height="40"/>
+                                            <variation key="device=watch42mm" height="44"/>
+                                        </button>
+                                        <button height="40" alignment="center" backgroundImage="Play" id="uHr-ft-idE">
+                                            <variation key="device=watch38mm" height="40"/>
+                                            <variation key="device=watch42mm" height="44"/>
+                                            <connections>
+                                                <action selector="playButtonTapped" destination="AgC-eL-Hgc" id="lTa-NQ-S3m"/>
+                                            </connections>
+                                        </button>
+                                        <button height="40" alignment="center" backgroundImage="FastForwards" id="fcq-Gk-RIM">
+                                            <variation key="device=watch38mm" height="40"/>
+                                            <variation key="device=watch42mm" height="44"/>
+                                        </button>
+                                    </items>
+                                </group>
+                                <slider width="1" alignment="left" value="1" maximum="3" steps="3" id="7qc-Os-nmr">
+                                    <connections>
+                                        <action selector="sliderAction:" destination="AgC-eL-Hgc" id="WGR-SI-4tq"/>
+                                    </connections>
+                                </slider>
+                            </items>
+                            <variation key="device=watch38mm" spacing="15"/>
+                            <variation key="device=watch42mm" spacing="24"/>
+                        </group>
+                    </items>
+                    <connections>
+                        <outlet property="playButton" destination="uHr-ft-idE" id="EHa-wr-0Se"/>
+                        <outlet property="volumeSlider" destination="7qc-Os-nmr" id="B7E-gc-kAY"/>
+                    </connections>
+                </controller>
+            </objects>
+        </scene>
+    </scenes>
+</document>
